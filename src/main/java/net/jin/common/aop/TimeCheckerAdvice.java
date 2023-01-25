@@ -24,6 +24,8 @@ public class TimeCheckerAdvice {
 	@Around("execution(* org.hdcd.service.*Service*.*(..))")
 	public Object timeLog(ProceedingJoinPoint pjp) throws Throwable {
 
+		System.out.println("Test for Git");
+
 		long startTime = System.currentTimeMillis();
 		log.info(Arrays.toString(pjp.getArgs()));
 
