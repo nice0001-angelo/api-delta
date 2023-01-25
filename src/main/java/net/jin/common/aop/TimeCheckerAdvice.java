@@ -25,6 +25,7 @@ public class TimeCheckerAdvice {
 	public Object timeLog(ProceedingJoinPoint pjp) throws Throwable {
 
 		System.out.println("Test for Git");
+		System.out.println("Test for Git2");
 
 		long startTime = System.currentTimeMillis();
 		log.info(Arrays.toString(pjp.getArgs()));
