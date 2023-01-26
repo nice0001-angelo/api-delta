@@ -11,6 +11,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
+//	@GetMapping("/")
+//	public String home(Locale locale, Model model) {
+//		LocalDateTime now = LocalDateTime.now();
+//
+//		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy년 M월 d일 (E) a h시 m분 s초");
+//		String formattedNow = now.format(formatter);
+//
+//		model.addAttribute("serverTime", formattedNow);
+//
+//		return "home";
+//	}
+
 	@GetMapping("/")
 	public String home(Locale locale, Model model) {
 		LocalDateTime now = LocalDateTime.now();
@@ -20,7 +32,6 @@ public class HomeController {
 
 		model.addAttribute("serverTime", formattedNow);
 
-		return "home";
+		return "index";
 	}
-
 }
