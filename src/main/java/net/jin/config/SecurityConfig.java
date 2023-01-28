@@ -175,10 +175,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 		// 웹경로 보안 설정
 		httpSecurity.authorizeRequests().requestMatchers(PathRequest.toStaticResources().atCommonLocations())
-				.permitAll().antMatchers("/").permitAll().antMatchers("/authenticate/**").access("permitAll")
-				.antMatchers("/codes/**").access("permitAll").antMatchers("/users/**").access("permitAll")
-				.antMatchers("/codegroups/**").access("hasRole('ADMIN')").antMatchers("/codedetails/**")
-				.access("hasRole('ADMIN')")
+				.permitAll().antMatchers("/").permitAll().antMatchers("/index").permitAll().antMatchers("/about")
+				.permitAll().antMatchers("/computer").permitAll().antMatchers("/laptop").permitAll()
+				.antMatchers("/product").permitAll().antMatchers("/contact").permitAll().antMatchers("/authenticate/**")
+				.access("permitAll").antMatchers("/codes/**").access("permitAll").antMatchers("/users/**")
+				.access("permitAll").antMatchers("/codegroups/**").access("hasRole('ADMIN')")
+				.antMatchers("/codedetails/**").access("hasRole('ADMIN')")
 				// 회원게시판 웹경로 보안 권한 지정
 				.antMatchers("/boards/**").access("request.method == 'GET' ? permitAll : hasAnyRole('ADMIN', 'MEMBER')")
 				// 공지사항 웹경로 보안 권한 지정
